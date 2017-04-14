@@ -1,0 +1,9 @@
+package logger;
+
+public class Logger {
+	priva org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger("logs");
+	
+	public static void Log(String test){
+		logger
+	}
+}

@@ -1,0 +1,5 @@
+package instinctools.project.loader;
+
+public class JavaClassLoader {
+
+}

@@ -1,0 +1,54 @@
+package instinctools.project;
+
+import java.util.Scanner;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+import instinctools.project.loader.ModuleLoader;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Logger log = LogManager.getLogger("info");
+		Scanner sc = new Scanner(System.in);
+		String modulePath = sc.nextLine();
+		ModuleLoader loader = new ModuleLoader(modulePath, ClassLoader.getSystemClassLoader());
+		try {
+			Class clazz = loader.loadClass(modulePath);
+		} catch (ClassNotFoundException e) {
+			log.info(e.getMessage());
+		}
+		
+		//String modulePath = "C:\\Classloaders\\Classloader\\bin\\instinctools\\project\\modules"; 
+		
+		//String modulePath = "C:\\classes\\";
+//		String classBinName = "instinctools.project.modules.NewModule";
+//		String methodName = "start";
+//		
+//		JavaClassLoader newLoader = new JavaClassLoader();
+//		newLoader.invokeClassMethod(classBinName, methodName);
+		/*ModuleLoader loader = new ModuleLoader(modulePath, ClassLoader.getSystemClassLoader());
+
+		File dir = new File(modulePath);
+		String[] modules = dir.list();
+
+		for (String module : modules) {
+			try {
+				String moduleName = module;
+				Class clazz = loader.loadClass(moduleName);
+				
+				Module execute = (Module) clazz.newInstance();
+
+				execute.start();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+		}*/
+	}
+
+}

@@ -1,0 +1,5 @@
+package instinctools.project.modules;
+
+public interface Module {
+	public void start();
+}

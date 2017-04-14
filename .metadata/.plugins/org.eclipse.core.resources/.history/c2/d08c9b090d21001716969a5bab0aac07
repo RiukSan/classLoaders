@@ -1,0 +1,15 @@
+package instinctools.project.modules;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+public class NewModule implements Module {
+
+	@Override
+	public void start() {
+		Logger log = LogManager.getLogger("info");
+		log.info("Started");
+		
+	}
+
+}

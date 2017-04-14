@@ -1,0 +1,28 @@
+package instinctools.project.loader;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+
+public class MethodInvoker {
+
+	public void invokeClassMethod(Class clazz, String methodName) {
+
+		try {
+			Constructor constructor = clazz.getConstructor();
+			Object myClassObject = constructor.newInstance();
+			Method method = clazz.getMethod(methodName);
+			method.invoke(myClassObject);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void getAllMethods(Class clazz) {
+		log.info("Choose method to invoke");
+		Method[] methods = clazz.getMethods();
+		for (int i = 0; i < methods.length; i++) {
+			log.info(methods[i].getName());
+		}
+	}
+}

@@ -1,0 +1,45 @@
+package instinctools.project;
+
+import java.io.File;
+import java.util.Scanner;
+
+import instinctools.project.loader.JavaClassLoader;
+import instinctools.project.loader.ModuleLoader;
+import instinctools.project.modules.Module;
+
+public class Main {
+
+	public static void main(String[] args) {
+		/*Scanner sc = new Scanner(System.in);
+		String modulePath = sc.nextLine();*/
+		String modulePath = "C:\\classes\\"; 
+		
+		//String classBinName = "C:\\classes\\NewModule.class";
+		/*String classBinName = "instinctools.project.modules.NewModule";
+		String methodName = "start";
+		
+		JavaClassLoader newLoader = new JavaClassLoader();
+		newLoader.invokeClassMethod(classBinName, methodName);*/
+		/*ModuleLoader loader = new ModuleLoader(modulePath, ClassLoader.getSystemClassLoader());
+
+		File dir = new File(modulePath);
+		String[] modules = dir.list();
+
+		for (String module : modules) {
+			try {
+				String moduleName = module.split(".class")[0];
+				Class clazz = loader.loadClass(moduleName);
+				Module execute = (Module) clazz.newInstance();
+
+				execute.start();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			}
+		}*/
+	}
+
+}

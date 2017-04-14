@@ -1,0 +1,10 @@
+package instinctools.project.modules;
+
+public class NewModule implements Module {
+
+	@Override
+	public void start() {
+		System.out.println("asd");
+	}
+
+}
