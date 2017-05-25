@@ -3,7 +3,7 @@ package instinctools.project.loader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
-public class MethodInvoker {
+public class MethodInvoker { //Single Responsibility Principle выполнен
 
 	public void invokeClassMethod(Class clazz, String methodName) {
 

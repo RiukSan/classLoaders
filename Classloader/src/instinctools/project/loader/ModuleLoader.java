@@ -13,7 +13,7 @@ import java.util.jar.JarFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-public class ModuleLoader extends ClassLoader {
+public class ModuleLoader extends ClassLoader { //Single Responsibility Principle не выполнен, можно было выделить отдельный класс для работы с файловой системой.
 	private String path;
 	private Logger log = LogManager.getLogger("Logger");
 
@@ -23,6 +23,7 @@ public class ModuleLoader extends ClassLoader {
 		showAllFiles();
 	}
 
+	//Данный метод можно было бы разбить на 2 метода. Один занимается конкретно поиском, второй выгрузкой.
 	@Override
 	public Class<?> findClass(String fileName) throws ClassNotFoundException {
 		try {
